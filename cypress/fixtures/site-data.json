@@ -1,0 +1,38 @@
+{
+  "socialLinks": [
+    {
+      "name": "linkedin",
+      "link": "https://www.linkedin.com/in/nico-amabile"
+    },
+    {
+      "name": "instagram",
+      "link": "https://www.instagram.com/__nico.ph/"
+    },
+    {
+      "name": "youtube",
+      "link": "https://www.youtube.com/@__nico.ph."
+    }
+  ],
+  "images": [
+    {
+      "link": "/deportes",
+      "alt": "El Gaucho Samurai recibiendo el cinto de campeon"
+    },
+    {
+      "link": "/eventos",
+      "alt": "Fotografía artística de una guitarra con tiempo de exposición prolongado"
+    },
+    {
+      "link": "/moda",
+      "alt": "Retrato de modelo"
+    },
+    {
+      "link": "/producto",
+      "alt": "Bolso tote de Kaffa - Fotografia de estudio"
+    },
+    {
+      "link": "/personal",
+      "alt": "Fotografia analogica en 35mm"
+    }
+  ]
+}
