@@ -13,6 +13,27 @@ describe('Homepage', () => {
     })
   })
 
+  describe('Visual testing', () => {
+    beforeEach(() => {
+      cy.eyesOpen({
+        appName: 'nicolas-amabile.dev',
+        testName: Cypress.currentTest.title,
+      })
+    })
+
+    afterEach(() => {
+      cy.eyesClose()
+    })
+
+    it('Checks the home page render', () => {
+      cy.eyesCheckWindow({
+        tag: 'Home page initial render',
+        target: 'window',
+        fully: true
+      })
+    })
+  })
+
   describe('Home page images', () => {
     images.forEach(({ link, alt }) => {
       it(`Checks image for ${link}`, () => {

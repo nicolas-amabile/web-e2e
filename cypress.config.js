@@ -8,3 +8,6 @@ module.exports = defineConfig({
     baseUrl: process.env.CYPRESS_BASE_URL
   },
 });
+
+
+require('@applitools/eyes-cypress')(module);
