@@ -4,6 +4,7 @@ const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-pr
 const { createEsbuildPlugin } = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 const { defineConfig } = require("cypress");
+const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 
 module.exports = defineConfig({
   projectId: process.env.CYPRESS_PROJECT_ID,
@@ -20,6 +21,12 @@ module.exports = defineConfig({
           plugins: [createEsbuildPlugin(config)],
         })
       );
+
+      on("before:browser:launch", (browser = {}, launchOptions) => {
+        prepareAudit(launchOptions);
+      });
+
+      on("task", { lighthouse: lighthouse() });
 
       // Make sure to return the config object as it might have been modified by the plugin.
       return config;

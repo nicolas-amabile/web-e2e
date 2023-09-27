@@ -1,3 +1,4 @@
+import '@cypress-audit/lighthouse/commands';
 import './utils'
 import './selectors'
 

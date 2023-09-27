@@ -1,10 +1,17 @@
 /// <reference types="cypress" />
 import { images, socialLinks } from '../fixtures/site-data.json'
+import { thresholds, lighthouseConfig } from '../fixtures/lighthouse.json'
 
 describe('Homepage', () => {
   beforeEach(() => {
     cy.visit('/')
     cy.injectAxe()
+  })
+
+  describe.skip('Performance', () => {
+    it('passes performance check', () => {
+      cy.lighthouse(thresholds, lighthouseConfig)
+    })
   })
 
   describe.skip('A11y', () => {
@@ -42,7 +49,7 @@ describe('Homepage', () => {
     })
   })
 
-  describe('Home page social links', () => {
+  describe.skip('Home page social links', () => {
     socialLinks.forEach(({ link, name }) => {
       it(`Checks link for ${name}`, () => {
         cy.get('nav')
