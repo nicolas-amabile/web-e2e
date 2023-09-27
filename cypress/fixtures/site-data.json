@@ -34,5 +34,27 @@
       "link": "/personal",
       "alt": "Fotografia analogica en 35mm"
     }
+  ],
+  "navigation": [
+    {
+      "link": "/deportes",
+      "text": "deportes"
+    },
+    {
+      "link": "/eventos",
+      "text": "eventos"
+    },
+    {
+      "link": "/moda",
+      "text": "moda"
+    },
+    {
+      "link": "/producto",
+      "text": "producto"
+    },
+    {
+      "link": "/personal",
+      "text": "personal"
+    }
   ]
 }

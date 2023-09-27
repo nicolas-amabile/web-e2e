@@ -19,3 +19,4 @@ jobs:
           CYPRESS_PROJECT_ID: ${{ vars.CYPRESS_PROJECT_ID }}
           CYPRESS_BASE_URL: ${{ vars.CYPRESS_BASE_URL }}
           APPLITOOLS_API_KEY: ${{ vars.APPLITOOLS_API_KEY }}
+          COMMIT_INFO_MESSAGE: Tests for PR ${{ github.event.number }} "${{ github.event.pull_request.title }}"

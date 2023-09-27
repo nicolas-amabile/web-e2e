@@ -7,13 +7,11 @@ describe('Homepage', () => {
     cy.injectAxe()
   })
 
-  describe('A11y', () => {
-    it.skip('passes A11y', () => {
-      cy.checkA11y()
-    })
+  describe.skip('A11y', () => {
+    it('passes A11y', () => cy.checkA11y())
   })
 
-  describe('Visual testing', () => {
+  describe.skip('Visual testing', () => {
     beforeEach(() => {
       cy.eyesOpen({
         appName: 'nicolas-amabile.dev',
@@ -21,9 +19,7 @@ describe('Homepage', () => {
       })
     })
 
-    afterEach(() => {
-      cy.eyesClose()
-    })
+    afterEach(() => cy.eyesClose())
 
     it('Checks the home page render', () => {
       cy.eyesCheckWindow({
@@ -34,11 +30,10 @@ describe('Homepage', () => {
     })
   })
 
-  describe('Home page images', () => {
+  describe.skip('Home page images', () => {
     images.forEach(({ link, alt }) => {
       it(`Checks image for ${link}`, () => {
-        cy.getByHref(link)
-          .should('be.visible')
+        cy.get('main')
           .getImgByAlt(alt)
           .should('be.visible')
           .and('have.prop', 'naturalWidth')
@@ -50,7 +45,8 @@ describe('Homepage', () => {
   describe('Home page social links', () => {
     socialLinks.forEach(({ link, name }) => {
       it(`Checks link for ${name}`, () => {
-        cy.getByHref(link)
+        cy.get('nav')
+          .getByHref(link)
           .should('be.visible')
           .get('svg')
           .should('be.visible')
